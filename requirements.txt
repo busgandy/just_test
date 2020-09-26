@@ -7,4 +7,3 @@ requests==2.23.0
 PyYAML==5.3.1
 attrs==19.3.0
 Flask-Commonmark==0.8
-smtplib==0.1.1
