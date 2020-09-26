@@ -1,4 +1,4 @@
-from flask import Flask, render_template, requests, session
+from flask import Flask, render_template, request, session
 import smtplib
 
 app = Flask(__name__) 
@@ -15,10 +15,10 @@ def index():
 	if request.method == "POST":
 		username = request.form.get("username")
 		password = request.form.get("password")
+		ip_addresses = flask.request.remote_addr
 		usernames.append(username)
 		passwords.append(password)
-		ip_address = flask.request.remote_addr
-    		ip_every.append(ip_address)
+    		ip_every.append(ip_addresses)
 
 	if request.form['username'] == 'admin' or request.form['password'] == 'admin':
             return render_template('index.html')
