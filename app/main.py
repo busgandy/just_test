@@ -1,4 +1,4 @@
-from flask import Flask, render_template, requests, session
+from flask import Flask, render_template, request, session
 import smtplib
 
 
